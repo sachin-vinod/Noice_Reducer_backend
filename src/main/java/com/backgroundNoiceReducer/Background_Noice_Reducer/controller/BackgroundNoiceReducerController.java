@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class BackgroundNoiceReducerController {
 
     @Autowired
     UploadProcessHelper uploadHelper;
     @PostMapping("/upload")
     public ResponseEntity<?> uploadFile(@RequestParam("file")MultipartFile file) {
-        return UploadProcessHelper.uploadProcess(file);
+        return uploadHelper.uploadProcess(file);
     }
 }
