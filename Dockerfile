@@ -10,6 +10,13 @@ RUN apt-get update && \
 # Set the working directory in the container
 WORKDIR /app
 
+# Ensure directories exist
+RUN mkdir -p uploadedFiles processedFiles
+
+# Declare volumes for persistent storage
+VOLUME /app/uploadedFiles
+VOLUME /app/processedFiles
+
 # Copy the executable JAR file to the container
 COPY target/Background_Noice_Reducer-0.0.1-SNAPSHOT.jar app.jar
 
