@@ -23,7 +23,6 @@ public class BackgroundNoiceReducerController {
     @GetMapping("/ffmpeg-version")
     public String getFfmpegVersion() {
         try {
-            return "ffmpeg version is hereeeeeeeeeeeee";
             Process process = Runtime.getRuntime().exec("ffmpeg -version");
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             StringBuilder version = new StringBuilder();
