@@ -51,6 +51,7 @@ public class UploadProcessHelper {
             if (Files.notExists(uploadDirPath)) {
                 Files.createDirectories(uploadDirPath);
             }
+            System.out.println("This is an uploaded path "+ uploadDir);
 
             // Create temporary file for uploading
             Path tempFilePath = uploadDirPath.resolve(tempFileName);
